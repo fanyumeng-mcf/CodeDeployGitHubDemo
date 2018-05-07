@@ -34,7 +34,6 @@ sudo easy_install-3.4 pip
 nmcli conn show
 nmcli conn up enp0s3
 sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s3 
-nmc
 
 #setting up a HTTP server and web browser 
 yum install -y httpd links w3m
@@ -120,7 +119,6 @@ vim logwatch.conf
 #to run a logwatch report at any time manually
 logwatch --detail Medium --mailto fanyumeng.mcf@gmail.com --service ftpd-messages --range All
 
-Test
 
 
 
