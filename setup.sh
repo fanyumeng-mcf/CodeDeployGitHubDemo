@@ -106,7 +106,7 @@ cp /usr/share/logwatch/default.conf/logwatch.conf /usr/share/logwatch/default.co
 cd /usr/share/logwatch/default.conf/
 vim logwatch.conf
         Details = Medium
-        #Sesrvice= ALL
+        #Service= ALL
         #Service = "-zz-network"
         #Service = "-zz-sys"
         #Service = "-eximstats"
