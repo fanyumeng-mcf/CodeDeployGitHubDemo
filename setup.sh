@@ -117,7 +117,7 @@ vim logwatch.conf
         #Esc :x
 
 #to run a logwatch report at any time manually
-#logwatch --detail Medium --mailto [email@email.com] --service ftpd-messages --range All
+logwatch --detail Medium --mailto fanyumeng.mcf@gmail.com --service ftpd-messages --range All
 
 #install a GUI to make Linux more visually appealing 
 yum groupinstall "GNOME Desktop" -y 
