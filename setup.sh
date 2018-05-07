@@ -120,6 +120,8 @@ vim logwatch.conf
 #to run a logwatch report at any time manually
 logwatch --detail Medium --mailto fanyumeng.mcf@gmail.com --service ftpd-messages --range All
 
+Test
+
 
 
 
