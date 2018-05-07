@@ -101,13 +101,25 @@ ftp localhost
 #log in as anonymous 
 get vsftpd.conf.pdf 
 
+#install logwatch
+sudo yum install -y logwatch
+cp /usr/share/logwatch/default.conf/logwatch.conf /usr/share/logwatch/default.conf/logwatch.orig.conf
+cd /usr/share/logwatch/default.conf/
+vim logwatch.conf
+        Details = Medium
+        #Sesrvice= ALL
+        #Service = "-zz-network"
+        #Service = "-zz-sys"
+        #Service = "-eximstats"
+        Service = ftpd-messages
+        Service = ftpd-xferlog
+        Service = http
 
+        #Esc :x
 
+#to run a logwatch report at any time manually
+logwatch --detail Medium --mailto fanyumeng.mcf@gmail.com --service ftpd-messages --range All
 
-ftp 127.0.0.1 
-cd./pub
-#log in as anonymous 
-echo "Hello World" > /var/ftp/pub/ftp_example.txt
 
 
 
