@@ -49,6 +49,9 @@ apachectl configtest
 #add contents to wepage
 cd /var/www/html/
 echo "<h1>This is a webpage.  Welcome. </h2>" > /var/www/html/index.html
+cd ..
+mkdir website 
+
 
 #add http to firewall
 firewall-cmd --permanent --add-service http
