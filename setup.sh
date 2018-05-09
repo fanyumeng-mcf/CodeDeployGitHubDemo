@@ -82,6 +82,10 @@ vim /var/www/html/alphasite.com/index.html
 
 cd /etc/httpd/conf/
 #ensure last line is uncommented 
+#uncomment      IncludeOptional conf.d/* .conf
+     #save and exit
+     
+     
 
 cd ..
 cd ./conf.d 
