@@ -71,6 +71,18 @@ mv index.html index_a.html
 cp index_a.html index_b.html
 mv index_a.html ./alphasite.com
 mv index_b.html ./betasite.com
+chmod -R 755 /var/www/html/alphasite.com/index_a.html
+chmod -R 755 /var/www/html/betasite.com/index_b.html 
+vim /var/www/html/alphasite.com/index_a.html 
+      # 
+
+
+
+vim /var/www/html/alphasite.com/index_b.html 
+
+
+
+
 
 
 
