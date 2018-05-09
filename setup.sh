@@ -82,10 +82,12 @@ vim /var/www/html/alphasite.com/index_b.html
 
 
 cd /etc/httpd/conf/
-ls
-cp httpd.conf httpd.orig.conf
-rm httpd.conf
-vim httpd.conf
+#ensure last line is uncommented 
+
+cd ..
+cd ./conf.d 
+vim domain.conf
+
 #new httpd with below 
 <VirtualHost *:80>
   ServerAdmin admin@alphasite.com
