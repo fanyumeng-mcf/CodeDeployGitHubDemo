@@ -100,6 +100,29 @@ NameVirtualHost *:80
 #
 
 mkdir -p /var/www/html/example.com/{public_html,logs}
+vim /var/www/html/example.com/public_html/index.html 
+
+# insert html content here
+# <h1>This is an example page Server 1 </h1>
+
+# 
+
+mkdir /var/www/html/example2.com
+cd /var/www/html/example2.com
+mkdir ./public_html
+vim ./public_html/index.html 
+
+#server2 goes here 
+<h1> This is server 2 </h1> 
+#
+
+gedit /etc/hosts
+#add 127.0.0.1 example.com
+#add 127.0.0.1 example2.com 
+# 
+
+
+
 
 
 
