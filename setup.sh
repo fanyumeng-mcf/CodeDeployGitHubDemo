@@ -81,7 +81,30 @@ vim /var/www/html/alphasite.com/index_a.html
 vim /var/www/html/alphasite.com/index_b.html 
 
 
-
+cd /etc/httpd/conf/
+ls
+cp httpd.conf httpd.orig.conf
+rm httpd.conf
+vim httpd.conf
+#new httpd with below 
+<VirtualHost *:80>
+  ServerAdmin admin@alphasite.com
+  DocumentRoot /var/www/html/alphasite.com/index_a.html
+  ServerName www.alphasite.com
+  ServerAlias www.alphasite.com alphasite.com 
+  ErrorLog /var/www/html/alphasite.com/error.log
+  LogFormat "%v %l %u %t \ "%r\" %>s %b" myvhost
+  CustomLog /var/www/html/alphaiste.com/access.log   myvhost
+</VirtualHost>
+<VirtualHost *:80>
+  ServerAdmin admin@betasite.com
+  DocumentRoot /var/www/html/betasite.com/index_b.html
+  ServerName www.betasite.com
+  ServerAlias www.betasite.com betasite.com 
+  ErrorLog /var/www/html/betasite.com/error.log
+  LogFormat "%v %l %u %t \ "%r\" %>s %b" myvhost
+  CustomLog /var/www/html/betaiste.com/access.log   myvhost
+</VirtualHost>
 
 
 
