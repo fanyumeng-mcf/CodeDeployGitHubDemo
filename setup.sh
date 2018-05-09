@@ -64,15 +64,7 @@ yum install -y httpd-manual
 apachectl graceful 
 
 #set up virtual host 
-cd /var/www/html/
-mkdir alphasite.com
-mkdir betasite.com
-mv index.html ./alphasite.com
-cp index.html ../betasite.com 
-mv index.html ./betasite.com
-chmod -R 755 /var/www/html/alphasite.com/index.html
-chmod -R 755 /var/www/html/betasite.com/index.html 
-vim /var/www/html/alphasite.com/index.html 
+
       # 
 
 
@@ -92,24 +84,22 @@ cd ./conf.d
 vim domain.conf
 
 #new httpd with below 
+vim /etc/httpd/conf.d/vhost.com
+#
+NameVirtualHost *:80
+
 <VirtualHost *:80>
-  ServerAdmin admin@alphasite.com
-  DocumentRoot /var/www/html/alphasite.com/index.html
-  ServerName www.alphasite.com
-  ServerAlias www.alphasite.com alphasite.com 
-  ErrorLog /var/www/html/alphasite.com/error.log
-  LogFormat "%v %l %u %t \ "%r\" %>s %b" myvhost
-  CustomLog /var/www/html/alphaiste.com/access.log   myvhost
+    ServerAdmin webmaster@example.com
+    ServerName example.com
+    ServerAlias www.example.com
+    DocumentRoot /var/www/html/example.com/public_html/
+    ErrorLog /var/www/html/example.com/logs/error.log
+    CustomLog /var/www/html/example.com/logs/access.log combined
 </VirtualHost>
-<VirtualHost *:80>
-  ServerAdmin admin@betasite.com
-  DocumentRoot /var/www/html/betasite.com/index.html
-  ServerName www.betasite.com
-  ServerAlias www.betasite.com betasite.com 
-  ErrorLog /var/www/html/betasite.com/error.log
-  LogFormat "%v %l %u %t \ "%r\" %>s %b" myvhost
-  CustomLog /var/www/html/betaiste.com/access.log   myvhost
-</VirtualHost>
+
+#
+
+mkdir -p /var/www/html/example.com/{public_html,logs}
 
 
 
