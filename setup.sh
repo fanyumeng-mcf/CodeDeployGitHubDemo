@@ -67,18 +67,17 @@ apachectl graceful
 cd /var/www/html/
 mkdir alphasite.com
 mkdir betasite.com
-mv index.html index_a.html
-cp index_a.html index_b.html
-mv index_a.html ./alphasite.com
-mv index_b.html ./betasite.com
-chmod -R 755 /var/www/html/alphasite.com/index_a.html
-chmod -R 755 /var/www/html/betasite.com/index_b.html 
-vim /var/www/html/alphasite.com/index_a.html 
+mv index.html ./alphasite.com
+cp index.html ../betasite.com 
+mv index.html ./betasite.com
+chmod -R 755 /var/www/html/alphasite.com/index.html
+chmod -R 755 /var/www/html/betasite.com/index.html 
+vim /var/www/html/alphasite.com/index.html 
       # 
 
 
 
-vim /var/www/html/alphasite.com/index_b.html 
+vim /var/www/html/alphasite.com/index.html 
 
 
 cd /etc/httpd/conf/
@@ -91,7 +90,7 @@ vim domain.conf
 #new httpd with below 
 <VirtualHost *:80>
   ServerAdmin admin@alphasite.com
-  DocumentRoot /var/www/html/alphasite.com/index_a.html
+  DocumentRoot /var/www/html/alphasite.com/index.html
   ServerName www.alphasite.com
   ServerAlias www.alphasite.com alphasite.com 
   ErrorLog /var/www/html/alphasite.com/error.log
@@ -100,7 +99,7 @@ vim domain.conf
 </VirtualHost>
 <VirtualHost *:80>
   ServerAdmin admin@betasite.com
-  DocumentRoot /var/www/html/betasite.com/index_b.html
+  DocumentRoot /var/www/html/betasite.com/index.html
   ServerName www.betasite.com
   ServerAlias www.betasite.com betasite.com 
   ErrorLog /var/www/html/betasite.com/error.log
