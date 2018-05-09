@@ -63,6 +63,17 @@ firewall-cmd --list-all
 yum install -y httpd-manual
 apachectl graceful 
 
+#set up virtual host 
+cd /var/www/html/
+mkdir alphasite.com
+mkdir betasite.com
+mv index.html index_a.html
+cp index_a.html index_b.html
+mv index_a.html ./alphasite.com
+mv index_b.html ./betasite.com
+
+
+
 #to view logs
 cat /var/log/httpd/server1_access
 
