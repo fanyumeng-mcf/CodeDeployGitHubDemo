@@ -62,10 +62,8 @@ apachectl graceful
 #####Setting up an Apache Virtual Host#####
 cd /etc/httpd/conf/
 #ensure last line is uncommented 
-#uncomment      IncludeOptional conf.d/* .conf
-     #save and exit
+#uncomment IncludeOptional conf.d/* .conf
      
-
 #new httpd with below 
 vim /etc/httpd/conf.d/vhost.com
 #
@@ -88,7 +86,6 @@ gedit /var/www/html/example.com/public_html/index.html
 
 # insert html content here
 # <h1>This is server 1 </h1>
-# 
 
 mkdir /var/www/html/example2.com
 cd /var/www/html/example2.com
@@ -97,12 +94,10 @@ vim ./public_html/index.html
 
 #server2 goes here 
 #<h1> This is server 2 </h1> 
-#
 
 gedit /etc/hosts
 #add 127.0.0.1 example.com
 #add 127.0.0.1 example2.com 
-# 
 
 #add users as root
 useradd user2
@@ -167,8 +162,6 @@ gedit logwatch.conf
         #Service = ftpd-messages
         #Service = ftpd-xferlog
         #Service = http
-
-        #Esc :x
 
 #to run a logwatch report at any time manually
 logwatch --detail Medium --mailto fanyumeng.mcf@gmail.com --service http ftpd-xferlog ftpd-messages --range All
