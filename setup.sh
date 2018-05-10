@@ -68,15 +68,15 @@ cd /etc/httpd/conf/
 vim /etc/httpd/conf.d/vhost.com
 #
 #<VirtualHost *:80>
- #   ServerAdmin webmaster@example.com
- #   ServerName example.com
- #   ServerAlias www.example.com
-  #  DocumentRoot /var/www/html/example.com/public_html
+ # ServerAdmin webmaster@example.com
+ # ServerName example.com
+ # ServerAlias www.example.com
+ # DocumentRoot /var/www/html/example.com/public_html
 #</VirtualHost>
 
 #<VirtualHost *:80>
-  #  ServerAdmin webmaster@example2.com
-  #  ServerName example2.com
+  # ServerAdmin webmaster@example2.com
+  # ServerName example2.com
   # ServerAlias www.example2.com
   # DocumentRoot /var/www/html/example2.com/public_html
 #</VirtualHost>
