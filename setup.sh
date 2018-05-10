@@ -163,7 +163,7 @@ get vsftpd.conf.pdf
 sudo yum install -y logwatch
 cp /usr/share/logwatch/default.conf/logwatch.conf /usr/share/logwatch/default.conf/logwatch.orig.conf
 cd /usr/share/logwatch/default.conf/
-vim logwatch.conf
+gedit logwatch.conf
         Details = Medium
         #Service= ALL
         #Service = "-zz-network"
@@ -176,7 +176,7 @@ vim logwatch.conf
         #Esc :x
 
 #to run a logwatch report at any time manually
-logwatch --detail Medium --mailto fanyumeng.mcf@gmail.com --service ftpd-messages --range All
+logwatch --detail Medium --mailto fanyumeng.mcf@gmail.com --service http ftpd-xferlog ftpd-messages --range All
 
 #install a GUI to make Linux more visually appealing 
 yum groupinstall "GNOME Desktop" -y 
