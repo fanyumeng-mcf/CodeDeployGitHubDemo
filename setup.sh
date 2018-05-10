@@ -74,25 +74,25 @@ cd /etc/httpd/conf/
 #new httpd with below 
 vim /etc/httpd/conf.d/vhost.com
 #
-NameVirtualHost *:80
+#<VirtualHost *:80>
+ #   ServerAdmin webmaster@example.com
+ #   ServerName example.com
+ #   ServerAlias www.example.com
+  #  DocumentRoot /var/www/html/example.com/public_html
+#</VirtualHost>
 
-<VirtualHost *:80>
-    ServerAdmin webmaster@example.com
-    ServerName example.com
-    ServerAlias www.example.com
-    DocumentRoot /var/www/html/example.com/public_html/
-    ErrorLog /var/www/html/example.com/logs/error.log
-    CustomLog /var/www/html/example.com/logs/access.log combined
-</VirtualHost>
-
-#
+#<VirtualHost *:80>
+  #  ServerAdmin webmaster@example2.com
+  #  ServerName example2.com
+  # ServerAlias www.example2.com
+  # DocumentRoot /var/www/html/example2.com/public_html
+#</VirtualHost>
 
 mkdir -p /var/www/html/example.com/{public_html,logs}
-vim /var/www/html/example.com/public_html/index.html 
+gedit /var/www/html/example.com/public_html/index.html 
 
 # insert html content here
 # <h1>This is server 1 </h1>
-
 # 
 
 mkdir /var/www/html/example2.com
@@ -101,7 +101,7 @@ mkdir ./public_html
 vim ./public_html/index.html 
 
 #server2 goes here 
-<h1> This is server 2 </h1> 
+#<h1> This is server 2 </h1> 
 #
 
 gedit /etc/hosts
@@ -164,14 +164,14 @@ sudo yum install -y logwatch
 cp /usr/share/logwatch/default.conf/logwatch.conf /usr/share/logwatch/default.conf/logwatch.orig.conf
 cd /usr/share/logwatch/default.conf/
 gedit logwatch.conf
-        Details = Medium
-        #Service= ALL
-        #Service = "-zz-network"
-        #Service = "-zz-sys"
-        #Service = "-eximstats"
-        Service = ftpd-messages
-        Service = ftpd-xferlog
-        Service = http
+        #Details = Medium
+        #comment out   #Service= ALL
+        #comment out   #Service = "-zz-network"
+        #comment out   #Service = "-zz-sys"
+        #comment out   #Service = "-eximstats"
+        #Service = ftpd-messages
+        #Service = ftpd-xferlog
+        #Service = http
 
         #Esc :x
 
