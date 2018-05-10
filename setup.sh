@@ -1,18 +1,18 @@
 #!/bin/bash
 
+#################################INSTALL & CONFIG#######################################################################################
 #log in as root
 #check internet 
 dhclient
 #update existing packages
 sudo yum -y update
-sudo yum -y install yum-utils  #supplement yum
-
+sudo yum -y install yum-utils  
+#supplement yum
 
 #install wget, curl, and vim 
 sudo yum -y install wget
 sudo yum -y install curl 
 sudo yum -y install vim
-
 
 #install python3.6
 sudo yum install -y https://centos7.iuscommunity.org/ius-release.rpm
@@ -35,6 +35,8 @@ nmcli conn show
 nmcli conn up enp0s3
 sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s3 
 
+########################APACHE HTTP SERVER##############################################################################################
+
 #setting up a HTTP server and web browser 
 yum install -y httpd links w3m
 
@@ -45,12 +47,6 @@ systemctl is-active httpd.service
 
 #check syntax of server 
 apachectl configtest 
-
-#add contents to wepage
-cd /var/www/html/
-echo "<h1>This is a webpage.  Welcome. </h2>" > /var/www/html/index.html
- 
-
 
 #add http to firewall
 firewall-cmd --permanent --add-service http
@@ -69,19 +65,11 @@ apachectl graceful
 
 
 
-vim /var/www/html/alphasite.com/index.html 
-
-
 cd /etc/httpd/conf/
 #ensure last line is uncommented 
 #uncomment      IncludeOptional conf.d/* .conf
      #save and exit
      
-     
-
-cd ..
-cd ./conf.d 
-vim domain.conf
 
 #new httpd with below 
 vim /etc/httpd/conf.d/vhost.com
@@ -103,7 +91,7 @@ mkdir -p /var/www/html/example.com/{public_html,logs}
 vim /var/www/html/example.com/public_html/index.html 
 
 # insert html content here
-# <h1>This is an example page Server 1 </h1>
+# <h1>This is server 1 </h1>
 
 # 
 
@@ -121,12 +109,16 @@ gedit /etc/hosts
 #add 127.0.0.1 example2.com 
 # 
 
+#add users as root
+useradd user2
+useradd user3
+passwd user2
+passwd user3
+#use GUI to switch users, or su user2 
+#enter passwod 
 
 
-
-
-
-
+################FTP SERVER#############################################################################################################
 #to view logs
 cat /var/log/httpd/server1_access
 
@@ -161,6 +153,7 @@ w3m ftp://192.168.61.124
 #save to directory using arrow keys
 #press 'q' to quit w3m 
 
+###########################LOGGING######################################################################################################
 #access the file
 ftp localhost
 #log in as anonymous 
