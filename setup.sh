@@ -59,12 +59,7 @@ firewall-cmd --list-all
 yum install -y httpd-manual
 apachectl graceful 
 
-#set up virtual host 
-
-      # 
-
-
-
+#####Setting up an Apache Virtual Host#####
 cd /etc/httpd/conf/
 #ensure last line is uncommented 
 #uncomment      IncludeOptional conf.d/* .conf
