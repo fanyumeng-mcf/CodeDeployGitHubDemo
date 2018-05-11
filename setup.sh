@@ -143,12 +143,12 @@ w3m ftp://192.168.61.124
 #save to directory using arrow keys
 #press 'q' to quit w3m 
 
-###########################LOGGING######################################################################################################
 #access the file
 ftp localhost
 #log in as anonymous 
 get vsftpd.conf.pdf 
 
+###########################LOGGING######################################################################################################
 #install logwatch
 sudo yum install -y logwatch
 cp /usr/share/logwatch/default.conf/logwatch.conf /usr/share/logwatch/default.conf/logwatch.orig.conf
